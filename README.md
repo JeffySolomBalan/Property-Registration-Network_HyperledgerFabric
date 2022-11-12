@@ -27,7 +27,7 @@ Move to the test-network folder inside the property-registration project. This f
 
 ## Testing the chaincode:
 
-1. requestNewUser(userName, email, socialSecurityNumber, phone)
+1. *** requestNewUser(userName, email, socialSecurityNumber, phone)*** 
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls true --cafile
 ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/
@@ -37,6 +37,7 @@ ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example
 ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles
 ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/
 ca.crt -c '{"function":"user:requestNewUser","Args":["Jeffy", "Jeffy@gmail.com", "1", "23456"]}'
+
 
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
@@ -52,7 +53,7 @@ ca.crt -c '{"function":"user:requestNewUser","Args":["Solom", "Solom@gmail.com",
 
 
 
-2. approveNewUser(userName, ssn)
+2. *** approveNewUser(userName, ssn) ***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -63,6 +64,8 @@ ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example
 ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles
 ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/
 ca.crt -c '{"function":"registrar:approveNewUser","Args":["Jeffy", "1"]}'
+
+
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -75,7 +78,8 @@ ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example
 ca.crt -c '{"function":"registrar:approveNewUser","Args":["Solom", "2"]}'
 
 
-3. viewUser(userName, ssn)
+
+3. *** viewUser(userName, ssn) ***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -86,6 +90,7 @@ ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example
 ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles
 ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/
 ca.crt -c '{"function":"registrar:viewUser","Args":["Jeffy", "1"]}'
+
 
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
@@ -99,7 +104,8 @@ ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example
 ca.crt -c '{"function":"registrar:viewUser","Args":["Solom", "2"]}'
 
 
-4. rechargeAccount(userName, ssn, bankTrxID)
+
+4. *** rechargeAccount(userName, ssn, bankTrxID) ***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -111,6 +117,8 @@ ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles
 ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/
 ca.crt -c '{"function":"user:rechargeAccount","Args":["Solom", "2", "upg1000"]}'
 
+
+
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
 ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/
@@ -122,7 +130,8 @@ ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example
 ca.crt -c '{"function":"user:rechargeAccount","Args":["Solom", "2", "upg1000"]}'
 
 
-5. propertyRegistrationRequest(propertyId, address, propSizeinSqft, propertyPrice, status, ownerName, ssn)
+
+5. *** propertyRegistrationRequest(propertyId, address, propSizeinSqft, propertyPrice, status, ownerName, ssn) ***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -135,7 +144,9 @@ ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example
 ca.crt -c '{"function":"user:propertyRegistrationRequest","Args":["001", "Pune", "500sqft", "1500",
 "registered","Jeffy", "1"]}'
 
-6. approvePropertyRegistration(propertyId)
+
+
+6. *** approvePropertyRegistration(propertyId) ***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -147,7 +158,9 @@ ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles
 ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/
 ca.crt -c '{"function":"registrar:approvePropertyRegistration","Args":["001"]}'
 
-7. viewProperty(propertyId)
+
+
+7. *** viewProperty(propertyId) ***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -159,7 +172,9 @@ ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles
 ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/
 ca.crt -c '{"function":"registrar:viewProperty","Args":["001"]}'
 
-8. updateProperty(propertyID, name, aadharNo, status)
+
+
+8. *** updateProperty(propertyID, name, aadharNo, status) *** 
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -171,7 +186,9 @@ ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles
 ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/
 ca.crt -c '{"function":"user:updateProperty","Args":["001", "onSale", "Jeffy", "1"]}'
 
-9. purchaseProperty(propId, buyerName, buyerSSN)
+
+
+9. *** purchaseProperty(propId, buyerName, buyerSSN) ***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
