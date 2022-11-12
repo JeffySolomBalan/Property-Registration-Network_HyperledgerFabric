@@ -53,7 +53,7 @@ ca.crt -c '{"function":"user:requestNewUser","Args":["Solom", "Solom@gmail.com",
 
 
 
-2. ***approveNewUser(userName, ssn)***
+### 2. ***approveNewUser(userName, ssn)***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -79,7 +79,7 @@ ca.crt -c '{"function":"registrar:approveNewUser","Args":["Solom", "2"]}'
 
 
 
-3. ***viewUser(userName, ssn)***
+### 3. ***viewUser(userName, ssn)***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -105,7 +105,7 @@ ca.crt -c '{"function":"registrar:viewUser","Args":["Solom", "2"]}'
 
 
 
-4. ***rechargeAccount(userName, ssn, bankTrxID)***
+### 4. ***rechargeAccount(userName, ssn, bankTrxID)***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -131,7 +131,7 @@ ca.crt -c '{"function":"user:rechargeAccount","Args":["Solom", "2", "upg1000"]}'
 
 
 
-5. ***propertyRegistrationRequest(propertyId, address, propSizeinSqft, propertyPrice, status, ownerName, ssn)***
+### 5. ***propertyRegistrationRequest(propertyId, address, propSizeinSqft, propertyPrice, status, ownerName, ssn)***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -146,7 +146,7 @@ ca.crt -c '{"function":"user:propertyRegistrationRequest","Args":["001", "Pune",
 
 
 
-6. ***approvePropertyRegistration(propertyId)***
+### 6. ***approvePropertyRegistration(propertyId)***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -160,7 +160,7 @@ ca.crt -c '{"function":"registrar:approvePropertyRegistration","Args":["001"]}'
 
 
 
-7. ***viewProperty(propertyId)***
+### 7. ***viewProperty(propertyId)***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -174,7 +174,7 @@ ca.crt -c '{"function":"registrar:viewProperty","Args":["001"]}'
 
 
 
-8. ***updateProperty(propertyID, name, aadharNo, status)*** 
+### 8. ***updateProperty(propertyID, name, aadharNo, status)*** 
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
@@ -188,7 +188,7 @@ ca.crt -c '{"function":"user:updateProperty","Args":["001", "onSale", "Jeffy", "
 
 
 
-9. ***purchaseProperty(propId, buyerName, buyerSSN)***
+### 9. ***purchaseProperty(propId, buyerName, buyerSSN)***
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
 orderer.example.com --tls true --cafile
