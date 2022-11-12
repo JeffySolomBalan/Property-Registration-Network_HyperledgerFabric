@@ -27,7 +27,7 @@ Move to the test-network folder inside the property-registration project. This f
 
 ## Testing the chaincode:
 
-1. #### ***requestNewUser(userName, email, socialSecurityNumber, phone)*** 
+#### 1. ***requestNewUser(userName, email, socialSecurityNumber, phone)*** 
 
 ../bin/peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls true --cafile
 ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/
